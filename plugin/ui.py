@@ -155,12 +155,12 @@ class RemoveLocale(Screen, ConfigListScreen):
 					target = "".join((ENIGMA,"/po/",self.getName(language,typ),"/LC_MESSAGES/enigma2.mo"))
 					self.osSystem("ln -s %s %s" % (target, path))
 				except:
-					print "[RemoveLocale] error", path
+					print("[RemoveLocale] error", path)
 			else:
 				try:
 					self.osSystem("rm -R %s" % (path))
 				except:
-					print "[RemoveLocale] error", path				
+					print("[RemoveLocale] error", path)
 		self["statusbar"].setText(_("Removed"))
 
 	def removePythonsPy(self):
@@ -187,11 +187,11 @@ class RemoveLocale(Screen, ConfigListScreen):
 				subDir += "/enigma2.mo"
 				self.osSystem("ln -s %s %s" % (subDir, path))
 			except:
-				print "[RemoveLocale] error", path
+				print("[RemoveLocale] error", path)
 		self["statusbar"].setText(_("Moved"))
 
 	def osSystem(self, cmd):
-#		print ">>>", cmd
+#		print(">>>", cmd)
 		os.system(cmd)
 
 	def selectTarget(self):
